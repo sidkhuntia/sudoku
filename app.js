@@ -29,9 +29,9 @@ function startgame(){
     if(id("diff-1").checked) board = easy[0];
     else if(id("diff-2").checked) board = medium[0];
     else board = hard[0];
-    lives = 3;
+    // lives = 3;
     disableSelect = false;
-    id("lives").textContent = "Lives Remaining: " + lives;
+    // id("lives").textContent = "Lives Remaining: " + lives;
     generateboard(board); 
     startTimer();
     id("number-container").classList.remove("hidden");
@@ -112,12 +112,12 @@ function updateMove() {
             disableSelect=true;
             selectedTile.classList.add("incorrect");
             setTimeout(() => {
-                lives--;
-                if(lives==0) endgame();
-                else{
-                    id("lives").textContent = "Lives Remaining: " + lives;
-                    disableSelect=false;
-                }
+                // lives--;
+                // if(lives==0) endgame();
+                // else{
+                //     id("lives").textContent = "Lives Remaining: " + lives;
+                // }
+                disableSelect=false;
                 selectedTile.classList.remove("incorrect");
                 selectedTile.classList.remove("selected");
                 selectedNum.classList.remove("selected");
