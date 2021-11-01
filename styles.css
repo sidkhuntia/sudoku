@@ -27,6 +27,7 @@ h1{
     align-items: center;
 }
 
+
 button{
     justify-self: center;
 }
@@ -80,6 +81,6 @@ p.incorrect{
     border-bottom: 4px solid black;
 }
 footer{
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
     text-align: center;
 }

@@ -21,7 +21,9 @@ var disableSelect;
 function id(id){
     return document.getElementById(id);
 }
-
+function darkmode() {
+    qs("body").classList.toggle("dark");
+}
 function startgame(){
     let board;
     if(id("diff-1").checked) board = easy[0];
@@ -32,12 +34,6 @@ function startgame(){
     id("lives").textContent = "Lives Remaining: " + lives;
     generateboard(board); 
     startTimer();
-    if(id('theme-1').checked){
-        qs("body").classList.remove("dark");
-    }
-    else{
-        qs("body").classList.add("dark");
-    }
     id("number-container").classList.remove("hidden");
 
 }
@@ -170,14 +166,9 @@ function clearPrevious(){
     selectedTile=null;
     selectedNum=null;
 }
-function qs(selector){
-    return document.querySelector(selector);
-}
-function qsa(selector){
-    return document.querySelectorAll(selector);
-}
 window.onload =function(){
     id("start-btn").addEventListener("click",startgame);
+    id("dark-btn").addEventListener("click",darkmode);
     for(let i = 0;i< 9;i++){
         id("number-container").children[i].addEventListener("click",function () {
             if(!disableSelect){
@@ -197,4 +188,10 @@ window.onload =function(){
             
         });
     }
+}
+function qs(selector){
+    return document.querySelector(selector);
+}
+function qsa(selector){
+    return document.querySelectorAll(selector);
 }
