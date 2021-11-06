@@ -1,3 +1,1 @@
-# sudoku
-
-## A online sudoku
+# Sudoku
